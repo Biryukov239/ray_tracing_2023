@@ -7,8 +7,8 @@ set (CMAKE_CXX_STANDARD_REQUIRED ON)
 set (CMAKE_CXX_EXTENSIONS        OFF)
 
 set (SOURCE
-  src/ray_tracing_simple/vec3.h
-  src/ray_tracing_simple/color.h
+  src/ray_tracing_simple/vec3.cpp
+  src/ray_tracing_simple/color.cpp
 
   src/ray_tracing_simple/main.cpp
 )
