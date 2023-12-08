@@ -1,56 +1,57 @@
-#ifndef VEC3_H
-#define VEC3_H
+#ifndef Vec3_H
+#define Vec3_H
 
 #include <cmath>
 #include <iostream>
 
 using std::sqrt;
 
-class vec3 {
+class Vec3 {
+  private:
+    double x_;
+    double y_;
+    double z_;
   public:
-    double e[3];
-
-    vec3() : e{0,0,0} {}
-    vec3(double e0, double e1, double e2) : e{e0, e1, e2} {}
+    Vec3();
+    Vec3(double x, double y, double z);
 
     double x() const;
     double y() const;
     double z() const;
 
-    vec3 operator-() const;
-    double operator[](int i) const;
-    double& operator[](int i);
+    Vec3 operator-() const;
+    double operator[](int ind) const;
+    double& operator[](int ind);
 
-    vec3& operator+=(const vec3 &v);
+    Vec3& operator+=(const Vec3& vec);
 
-    vec3& operator*=(double t);
+    Vec3& operator*=(double value);
 
-    vec3& operator/=(double t);
+    Vec3& operator/=(double value);
 
     double length() const;
 
-    double length_squared() const;
+    double square_diagonal() const;
+};
 
-using point3 = vec3;
+using point3 = Vec3;
 
-inline std::ostream& operator<<(std::ostream &out, const vec3 &v);
+std::ostream& operator<<(std::ostream& out, const Vec3& vec);
 
-inline vec3 operator+(const vec3 &u, const vec3 &v);
+Vec3 operator+(const Vec3& vec1, const Vec3& vec2);
 
-inline vec3 operator-(const vec3 &u, const vec3 &v);
+Vec3 operator-(const Vec3& vec1, const Vec3& vec2);
 
-inline vec3 operator*(const vec3 &u, const vec3 &v);
+Vec3 operator*(const Vec3& vec1, const Vec3& vec2);
 
-inline vec3 operator*(double t, const vec3 &v);
+Vec3 operator*(double value, const Vec3& vec);
 
-inline vec3 operator*(const vec3 &v, double t);
+Vec3 operator/(const Vec3& vec, double value);
 
-inline vec3 operator/(vec3 v, double t);
+double dot(const Vec3& vec1, const Vec3& vec2);
 
-inline double dot(const vec3 &u, const vec3 &v);
+Vec3 cross(const Vec3& vec1, const Vec3& vec2);
 
-inline vec3 cross(const vec3 &u, const vec3 &v);
-
-inline vec3 unit_vector(vec3 v);
+Vec3 unit_vector(const Vec3& vec);
 
 #endif
