@@ -12,7 +12,7 @@ class Vec3 {
     double y_;
     double z_;
   public:
-    Vec3(): x_(0), y_(0), z_(0) {}
+    Vec3() = default;
 
     Vec3(double x, double y, double z): x_(x), y_(y), z_(z) {}
 
@@ -72,11 +72,11 @@ class Vec3 {
 
 
     double length() const {
-        return sqrt(square_diagonal());
+        return sqrt(length_squared());
     }
 
 
-    double square_diagonal() const {
+    double length_squared() const {
         return x_ * x_ + y_ * y_ + z_ * z_;
     }
 };

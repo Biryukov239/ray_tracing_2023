@@ -13,6 +13,13 @@ set (SOURCE
   src/ray_tracing_simple/color.h
   src/ray_tracing_simple/ray.h
   src/ray_tracing_simple/ray.cpp
+  src/ray_tracing_simple/constants.h
+  src/ray_tracing_simple/hittable.cpp
+  src/ray_tracing_simple/hittable.h
+  src/ray_tracing_simple/hittable_list.h
+  src/ray_tracing_simple/hittable_list.cpp
+  src/ray_tracing_simple/sphere.h
+  src/ray_tracing_simple/sphere.cpp
 
   src/ray_tracing_simple/main.cpp
 )

@@ -31,7 +31,7 @@ class Vec3 {
 
     double length() const;
 
-    double square_diagonal() const;
+    double length_squared() const;
 };
 
 using point3 = Vec3;
